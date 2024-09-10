@@ -9,7 +9,6 @@ struct node
 
 
 //push fn
-
 void push(int data)
 {
 	struct node *temp = malloc(sizeof(struct node));
@@ -19,7 +18,6 @@ void push(int data)
 }
 
 //pop fn 
-
 void pop()
 {
 	if (top == NULL)
@@ -37,7 +35,6 @@ void pop()
 }
 
 //display fn
-
 void display()
 {
 	if (top == NULL)
@@ -53,11 +50,11 @@ void display()
 			printf("%d ", temp->val);
 			temp = temp->next;
 		}
+		printf("\n");
 	}
 }
 
 //main fn
-
 int main()
 {
 	int choice, data;
