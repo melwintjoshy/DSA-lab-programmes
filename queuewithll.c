@@ -8,7 +8,6 @@ struct node
 } *front = NULL, *rear = NULL;
 
 //enqueue fn
-
 void enqueue(int data)
 {
 	struct node *temp = malloc(sizeof(struct node));
@@ -26,6 +25,7 @@ void enqueue(int data)
 	}
 }
 
+//dequeue fn
 void dequeue()
 {
 	if (front == NULL)
@@ -67,7 +67,6 @@ void display()
 }	
 
 //main fn
-
 int main()
 {
 	int choice, data;
