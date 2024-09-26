@@ -6,7 +6,7 @@ void bin_search(int arr[], int size, int key) {
     int found = 0;
 
     while (low <= high) {
-        int mid = (low + high) / 2;
+        int mid = low + (high - low) / 2;
 
         if (arr[mid] == key) {
             printf("Element found at index %d.\n", mid);
