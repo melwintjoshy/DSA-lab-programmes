@@ -7,7 +7,7 @@ void bin_search(int arr[], int size, int key) {
 
     while (low <= high) 
     {
-        int mid = (low + high) / 2;
+        int mid = low + (high - low) / 2;
 
         if (arr[mid] == key) 
         {
@@ -37,12 +37,12 @@ int main() {
     scanf("%d",&n);
     int arr[n];
     printf("\nEnter the elements: ");
-    for(int i=0;i<n;i++)
+    for(int i = 0; i < n; i++)
     {
-    scanf("%d",&arr[i]);
+    scanf("%d", &arr[i]);
     }
     printf("\nEnter the element to be searched for: ");
-    scanf("%d",&key);
+    scanf("%d", &key);
 
     bin_search(arr, n, key);
 
