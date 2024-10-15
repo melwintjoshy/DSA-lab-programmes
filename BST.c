@@ -72,7 +72,7 @@ struct bstNode* deleteNode(struct bstNode* root, data)
 				 free(root);
 				 return NULL;
 			}
-		}
+		
         else if (root->left == NULL
                  || root->right == NULL) {
             struct bstNode* temp;
@@ -89,10 +89,12 @@ struct bstNode* deleteNode(struct bstNode* root, data)
             struct bstNode* temp
                 = findMin(root->right);
             root->val = temp->val;
-            root->right = delete (root->right, temp->val);
+            root->right = deleteNode (root->right, temp->val);
         }
+	}
+	return root;
     }
-    return root;
+    
 		
 			
 	
