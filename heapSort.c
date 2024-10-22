@@ -32,8 +32,8 @@ void heapify(int arr[], int n, int i)
 void heapSort(int arr[], int n)
 {
 	int temp, i;                      //heapify on non leaf nodes 
-	
-	for(i = n / 2 - 1; i >= 0; i--)   //index of non leafnodes are from n/2 - 1 to 0    || (n\2 - 1) is the index of last non leaf node
+	lastNonleaf = n / 2 - 1;
+	for(i = lastNonleaf; i >= 0; i--)   //index of non leafnodes are from n/2 - 1 to 0    
 	{
 		heapify(arr, n, i); 
 	}
