@@ -1,9 +1,8 @@
 #include <stdio.h>
-
-#define MAX 100 // Maximum size of the heap
+#define MAX 100
 
 int heap[MAX];
-int size = 0;
+int n = 0;
 
 // Function to maintain the heap property
 void heapify(int arr[], int n, int i) {
@@ -31,25 +30,25 @@ void heapify(int arr[], int n, int i) {
 }
 
 // Function to insert a new element into the heap
-void insert(int value) {
-    if (size >= MAX) {
+void insert(int data) {
+    if (n >= MAX) {
         printf("Heap overflow!\n");
         return;
     }
 
     // Insert the new element at the end
-    heap[size] = value;
-    size++;
+    heap[size] = data;
+    n++;
 
     // Restore the heap property by moving up the new element
-    for (int i = (size / 2) - 1; i >= 0; i--) {
-        heapify(heap, size, i);
+    for (int i = (n / 2) - 1; i >= 0; i--) {
+        heapify(heap, n, i);
     }
 }
 
 // Function to delete the root element from the heap
 void delete() {
-    if (size == 0) {
+    if (n == 0) {
         printf("Heap is empty!\n");
         return;
     }
@@ -57,22 +56,22 @@ void delete() {
     printf("Deleted element: %d\n", heap[0]);
 
     // Replace the root with the last element
-    heap[0] = heap[size - 1];
-    size--;
+    heap[0] = heap[n - 1];
+    n--;
 
     // Restore the heap property by heapifying from the root
-    heapify(heap, size, 0);
+    heapify(heap, n, 0);
 }
 
 // Function to display the heap
 void display() {
-    if (size == 0) {
+    if (n == 0) {
         printf("Heap is empty!\n");
         return;
     }
 
     printf("Heap elements: ");
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < n; i++) {
         printf("%d ", heap[i]);
     }
     printf("\n");
