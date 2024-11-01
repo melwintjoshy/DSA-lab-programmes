@@ -37,7 +37,7 @@ void insert(int data) {
     }
 
     // Insert the new element at the end
-    heap[size] = data;
+    heap[n] = data;
     n++;
 
     // Restore the heap property by moving up the new element
