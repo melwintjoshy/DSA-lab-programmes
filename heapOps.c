@@ -41,7 +41,8 @@ void insert(int data) {
     n++;
 
     // Restore the heap property by moving up the new element
-    for (int i = (n / 2) - 1; i >= 0; i--) {
+    int lastNonleaf = n / 2 - 1;
+    for (int i = lastNonleaf; i >= 0; i--) {
         heapify(heap, n, i);
     }
 }
