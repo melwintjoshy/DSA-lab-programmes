@@ -1,87 +1,109 @@
-#include <stdio.h> 
+#include <stdio.h>
 #include <stdlib.h>
 
-struct bstNode {
+struct bstNode
+{
     int val;
-    struct bstNode *right, *left;
+    struct bstNode *left, *right;
 };
 
-//create new node fn
-struct bstNode* createNewnode(int data){
-    struct bstNode *temp = malloc(sizeof(struct bstNode));
+//new node creation fn
+struct bstNode* createNewnode(int data)
+{
+    struct bstNode *temp = (struct bstNode*)malloc(sizeof(struct bstNode));
     temp->val = data;
     temp->left = temp->right = NULL;
     return temp;
 }
 
 //insert fn
-struct bstNode* insertNode(struct bstNode *root, int data){
-    if (root == NULL){
+struct bstNode* insertNode(struct bstNode* node, int data)
+{
+    if(node == NULL)
+    {
         return createNewnode(data);
     }
-    if (data < root->val){
-        root->left = insertNode(root->left, data);
+    if(data < node->val)
+    {
+        node->left = insertNode(node->left, data);
     }
-    else if (data > root->val){
-        root->right = insertNode(root->right, data);
+    if(data > node->val)
+    {
+        node->right = insertNode(node->right, data);
     }
-    return root;
+    return node;
 }
 
-//find min fn is used to get the inorder successor
-struct bstNode* findMin(struct bstNode *root){
-    if (root == NULL){
+struct bstNode* findMin(struct bstNode* root) //used to find the inorder successor
+{
+    if (root == NULL)
+    {
         return NULL;
     }
-    else if (root->left != NULL){
+    else if (root->left != NULL)
+    {
         return findMin(root->left);
     }
-    else{
+    else 
+    {
         return root;
     }
 }
 
 //delete fn
-struct bstNode* deleteNode(struct bstNode *root, int data){
-    if (root == NULL){
+struct bstNode* deleteNode(struct bstNode* root, int data) //root is the current node
+{
+    if (root == NULL)
+    {
         return NULL;
     }
-    if (data < root->val){
+    if (data < root->val)
+    {
         root->left = deleteNode(root->left, data);
     }
-    else if (data > root->val){
+    else if (data > root->val)
+    {
         root->right = deleteNode(root->right, data);
     }
-    else{
-        if (root->left == NULL && root->right == NULL){ 	 //root has no child
+    else
+    {
+        if (root->left == NULL && root->right == NULL) //current node has no child
+        {
             free(root);
             return NULL;
         }
-        else if (root->left == NULL || root->right == NULL){ //root has only one child
+        else if (root->left == NULL || root->right == NULL) //current node has one child
+        {   
             struct bstNode* temp;
-            if(root->left == NULL){ 						 // only right child
+            if (root->left == NULL)
+            {
                 temp = root->right;
             }
-            else if (root->right == NULL){					 // only left child
+            else if (root->right == NULL)
+            {
                 temp = root->left;
             }
             free(root);
             return temp;
-        }
-        else {												 //root has two children 
-            struct bstNode *temp = findMin(root->right);	 // root replaced by inorder successor
+        } 
+        else //current node has two children, so it is replaced by the inorder successor.
+        {
+            struct bstNode* temp = findMin(root->right);
             root->val = temp->val;
-            root->right = deleteNode(root->right, temp->val);
-        }
+            root->right = deleteNode(root->right, temp->val); 
+        }    
+        
     }
     return root;
 }
 
-struct bstNode* searchNode(struct bstNode *root, int target){
-    if (root == NULL || root->val == target){
+//search fn
+struct bstNode* searchNode(struct bstNode* root, int target)
+{
+    if (root == NULL || root->val == target) {
         return root;
     }
-    if(target > root->val){
+    if ( target > root->val) {
         return searchNode(root->right, target);
     }
     return searchNode(root->left, target);
@@ -97,6 +119,7 @@ void postOrder(struct bstNode* root)
 }
 int main()
 {
+    
     struct bstNode *root = NULL;
 
     root = insertNode(root, 50);
@@ -108,7 +131,7 @@ int main()
     insertNode(root, 80);
 
     postOrder(root);
-    
+
     printf("\n");
 
      if (searchNode(root, 60) != NULL) {
