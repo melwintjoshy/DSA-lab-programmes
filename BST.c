@@ -103,7 +103,8 @@ struct bstNode* searchNode(struct bstNode* root, int target)
     if (root == NULL || root->val == target) {
         return root;
     }
-    if ( target > root->val) {
+    if (target > root->val) 
+    {
         return searchNode(root->right, target);
     }
     return searchNode(root->left, target);
