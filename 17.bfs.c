@@ -49,22 +49,6 @@ int dequeue()
 	}
 }
 
-//display fn
-void display()
-{
-	if (front > rear)
-    {
-        printf("QUEUE IS EMPTY\n");
-        return;
-    }
-
-	for (int i = front; i <= rear ; i++)
-	{
-		printf("%d ", queue_arr[i]);
-	}
-	printf("\n");
-}
-
 void Bfs(int i)
 {
     printf("%d ", i);
@@ -73,17 +57,17 @@ void Bfs(int i)
 
     while(front <= rear) //while queue is not empty
     {
-            int node = dequeue();
-            for (int j = 0; j < 7; j++)
-            {
-                if (adjMat[node][j] == 1 && !visited[j])
+        int node = dequeue();
+        for (int j = 0; j < 7; j++)
+				{
+        	if (adjMat[node][j] == 1 && !visited[j])
                 {
-                    printf("%d ", j);
+                  	printf("%d ", j);
                     visited[j] = 1;
                     enqueue(j);
                 }
-            }
-    }
+        }
+		}
 }
 int main()
 {
