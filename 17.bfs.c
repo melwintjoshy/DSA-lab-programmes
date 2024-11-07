@@ -59,15 +59,15 @@ void Bfs(int i)
     {
         int node = dequeue();
         for (int j = 0; j < 7; j++)
-				{
-        	if (adjMat[node][j] == 1 && !visited[j])
-                {
-                  	printf("%d ", j);
-                    visited[j] = 1;
-                    enqueue(j);
-                }
+        {
+            if (adjMat[node][j] == 1 && !visited[j])
+            {
+                printf("%d ", j);
+                visited[j] = 1;
+                enqueue(j);
+            }
         }
-		}
+    }
 }
 int main()
 {
