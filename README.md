@@ -1,21 +1,20 @@
-Here's the list of SEM 1 DSA LAB PROGRAMMES
+LIST OF SEM 1 DSA LAB PROGRAMMES
 
-1. Binary Search  
-2. Bubble Sort  
-3. Sparse Matrix Addition  
-4. Queue using Arrays  
-5. Stack using Arrays  
-6. Stack using LinkedList  
-7. Queue using LinkedList  
-8. Binary Search Tree  
-9. Infix to Postfix using stack  
-10. Evaluate Postfix using stack  
-11. BST Traversal using arrays  
-12. Binary Search Tree traversal  
-13. Insertion and Deletion on heaps  
-14. Build heap  
-15. Heap sort  
-16. Depth First Search on graphs  
-17. Breadth First Search on graphs  
-18. Online bin-packing problem  
-
+1. Binary search
+2. Bubble sort
+3. Sparse Matrix
+4. Stack W Array
+5. Queue W Array
+6. Stack W LL
+7. Queue W LL
+8. BST W LL
+9. BST W Array 
+10. BT Traversal W Array
+11. Infix to Postfix(stack)
+12. Postfix evaluation(stack)
+13. Insert and delete in Heaps
+14. Heaps from a given set of values
+15. Heapsort
+16. DFS
+17. BFS
+18. Online Bin Packing
