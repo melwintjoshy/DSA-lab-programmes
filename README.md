@@ -13,7 +13,7 @@ LIST OF SEM 1 DSA LAB PROGRAMMES
 11. Infix to Postfix(stack)
 12. Postfix evaluation(stack)
 13. Insert and delete in Heaps
-14. Heaps from a given set of values
+14. Heaps from a given set of values (Build Heap)
 15. Heapsort
 16. DFS
 17. BFS
